@@ -1,28 +1,7 @@
-var kvfs = require("./kvfs.js")("data");
 var gcm = require("node-gcm");
 
 function sendVisibleNotification(req, res) {
-    var appToken = req.get("App-Token");
-    if(!appToken) {
-        return res.status(401).send({
-            error: "Missing App-Token"
-        });
-    }
-
-    kvfs.get("token_" + appToken, function(error, app) {
-        if(error && error == "ENOENT") {
-            return res.status(401).send({
-                error: "Invalid App-Token"
-            });
-        }
-        if(error) {
-            console.error("Failed to read app token " + appToken, error);
-            return res.status(500).send({
-                error: "Failed to authenticate"
-            });
-        }
-
-        var sender = new gcm.Sender(app.apiKey);
+        var sender = new gcm.Sender(req.state.app.apiKey);
 
         if(!req.body.to) {
             return res.status(400).send({
@@ -60,7 +39,7 @@ function sendVisibleNotification(req, res) {
         if(req.body.title) {
             messageData.notification.title = req.body.title;
         }
-        if(app.appType == "iOS") {
+        if(req.state.app.appType == "iOS") {
             messageData.priority = "high";
         }
 
@@ -158,7 +137,6 @@ function sendVisibleNotification(req, res) {
                 });
             }
         });
-    });
 }
 
 module.exports = sendVisibleNotification;
