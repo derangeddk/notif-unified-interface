@@ -65,9 +65,11 @@ The response fields describe recipients that could not receive the notification,
 
 The `deletedRecipients` array is a list of strings, each string being a registration id that has been deleted and should not be sent to in the future.
 
-The `updatedRecipients` array is a list of entries with a `from` and `to` field. Each entry represents a renamed registration id, `from` being the original and `to` being the id that should be used in the future for this user.
+The `updatedRecipients` array is a list of entries with a `from` and `to` field.
+Each entry represents a renamed registration id, `from` being the original and `to` being the id that should be used in the future for this user.
 
-The `failedDeliveries` array is a list of entries with an `error` and a `recipient` field. Each entry represents a recipient that did not receive the notification, with the error that resulted in this situation.
+The `failedDeliveries` array is a list of entries with an `error` and a `recipient` field.
+Each entry represents a recipient that did not receive the notification, with the error that resulted in this situation.
 
 ## Data Notification
 
