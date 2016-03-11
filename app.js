@@ -8,11 +8,9 @@ var sendVisibleNotification = require("./sendVisibleNotification.js");
 var app = express();
 
 app.use(bodyParser.json());
-
 app.use(requestLogging);
 
 app.get("/", indexEndpoint);
-
 app.post("/visible-notification", authenticateApp, sendVisibleNotification);
 
 app.listen(3098);
