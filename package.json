@@ -1,0 +1,24 @@
+{
+  "name": "notif-unified-interface",
+  "version": "0.0.1",
+  "description": "Unified Interface for sending notifications to iOS and Android as a service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derangeddk/notif-unified-interface.git"
+  },
+  "author": "Niels Abildgaard <me@hypesystem.dk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derangeddk/notif-unified-interface/issues"
+  },
+  "homepage": "https://github.com/derangeddk/notif-unified-interface#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "node-gcm": "^0.14.0"
+  }
+}
