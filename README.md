@@ -33,7 +33,8 @@ Here's an example of sending a Visible Notification:
     <-- 200 OK
         {
           "deletedRecipients": /*deletedRecipients:array*/,
-          "updatedRecipients": /*updatedRecipients:array*/
+          "updatedRecipients": /*updatedRecipients:array*/,
+          "failedDeliveries": /*failedDeliveries:array:/
         }
 
 ### Possible additions:
@@ -66,6 +67,8 @@ The `deletedRecipients` array is a list of strings, each string being a registra
 
 The `updatedRecipients` array is a list of entries with a `from` and `to` field. Each entry represents a renamed registration id, `from` being the original and `to` being the id that should be used in the future for this user.
 
+The `failedDeliveries` array is a list of entries with an `error` and a `recipient` field. Each entry represents a recipient that did not receive the notification, with the error that resulted in this situation.
+
 ## Data Notification
 
 Here's an example of sending a Data Notification:
@@ -83,7 +86,8 @@ Here's an example of sending a Data Notification:
     <-- 200 OK
         {
           "deletedRecipients": /*deletedRecipients:array*/,
-          "updatedRecipients": /*updatedRecipients:array*/
+          "updatedRecipients": /*updatedRecipients:array*/,
+          "failedDeliveries": /*failedDeliveries:array:/
         }
 
 The fields break down as such:
