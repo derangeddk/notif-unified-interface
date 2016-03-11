@@ -134,6 +134,11 @@ If you want to clean up an app token, it is done simply with:
 
     <-- 200 OK
 
+## Missing (from this documentation)
+
+- Decide on the #wontfix
+- Error states/error handling -- what should a client do?
+
 ## Future
 
 In the future we will need to add some kind of account token which is linked to an account that will be charged based on the usage.
