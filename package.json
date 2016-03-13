@@ -19,6 +19,7 @@
   "homepage": "https://github.com/derangeddk/notif-unified-interface#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "deranged-express-request-logger": "0.0.1",
     "express": "^4.13.4",
     "kvfs": "^0.1.0",
     "node-gcm": "^0.14.0"
